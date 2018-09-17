@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Helmet from '../../../../../Library/Caches/typescript/2.9/node_modules/@types/react-helmet';
+import Helmet from 'react-helmet';
 import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
-import kebabCase from '../../../../../Library/Caches/typescript/2.9/node_modules/@types/lodash/kebabCase';
+import kebabCase from 'lodash/kebabCase';
 import { Layout, Wrapper, Header, Subline, SEO, PrevNext } from 'components';
 import { media } from '../utils/media';
 import config from '../../config/SiteConfig';

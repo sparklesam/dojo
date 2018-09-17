@@ -30,7 +30,8 @@ const DojoPage = ({data}) => (
     {data.allPrismicData.edges.map(post => (
         <div key={post.node.data.id}>
             <Img sizes={post.node.data.image.localFile.childImageSharp.sizes} />
-            <a href={post.node.data.link.url}>
+           
+            <a target="_blank" href={post.node.data.link.url}>
                 <h1>{post.node.data.headline.text}</h1>
             </a>
             <p>{post.node.data.description.text}</p>
@@ -44,36 +45,43 @@ const DojoPage = ({data}) => (
 
 export const data = graphql`
 query DojoPage {
-    allPrismicData {
-      edges {
-        node {
-          uid
-          id
-          data {
-            headline {
-              html
-              text
+  allPrismicData {
+    edges {
+      node {
+        uid
+        id
+        data {
+          headline {
+            html
+            text
+          }
+          description {
+            html
+            text
+          }
+          link {
+            url
+          }
+          primary_tag {
+            document {
+              ... on PrismicTag {
+                data {
+                  text
+                }
+              }
             }
-            description {
-              html
-              text
-            }
-            link {
-              url
-            }
-            image {
-              localFile {
-                childImageSharp {
-                  sizes(maxWidth: 1280) {
-                   src
-                    srcSet
-                    srcWebp
-                      srcSetWebp
-                    base64
-                    aspectRatio
-                    sizes
-                  }
-                  }
+          }
+          image {
+            localFile {
+              childImageSharp {
+                sizes(maxWidth: 1280) {
+                  src
+                  srcSet
+                  srcWebp
+                  srcSetWebp
+                  base64
+                  aspectRatio
+                  sizes
                 }
               }
             }
@@ -81,7 +89,9 @@ query DojoPage {
         }
       }
     }
-  
+  }
+}
+
   
 `
 
