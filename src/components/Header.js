@@ -19,7 +19,6 @@ const Wrapper = styled.header`
 const Content = styled.div`
   max-width: 1000px;
   margin: 0 auto;
-
   a {
     color: white;
     &:hover {

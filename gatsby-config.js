@@ -56,7 +56,14 @@ module.exports = {
     },
     'gatsby-plugin-react-helmet',
     'gatsby-image',
+    `gatsby-transformer-sharp`,
     'gatsby-plugin-sharp',
+    {
+      resolve: `gatsby-remark-images`,
+      options: {
+        maxWidth: 1280,
+      },
+    },
     'gatsby-plugin-styled-components',
     {
       resolve: 'gatsby-source-filesystem',

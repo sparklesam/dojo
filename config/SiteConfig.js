@@ -19,7 +19,7 @@ module.exports = {
   backgroundColor: '#2b2e3c',
 
   // Settings for typography.js
-  headerFontFamily: 'Bitter',
-  bodyFontFamily: 'Open Sans',
+  headerFontFamily: 'Roboto',
+  bodyFontFamily: 'Roboto',
   baseFontSize: '18px',
 };
