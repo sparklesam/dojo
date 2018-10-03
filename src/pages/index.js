@@ -21,12 +21,15 @@ const Content = styled.article`
   }
 `;
 
-const DojoPage = ({data}) => (
-    
+const DojoPage = ({data}) => {
+  console.log(data)
+  return(
     <Layout>
     <Content>
     <Sidebar></Sidebar>
+     
     <Grid>
+    
     {data.allPrismicData.edges.map(post => (
         <div key={post.node.data.id}>
             <Img sizes={post.node.data.image.localFile.childImageSharp.sizes} />
@@ -35,13 +38,19 @@ const DojoPage = ({data}) => (
                 <h1>{post.node.data.headline.text}</h1>
             </a>
             <p>{post.node.data.description.text}</p>
- 
+            {/*{post.node.data.primary_tag.map((tag, index) => {
+            return (
+              <span key={index}>{tag}</span>
+            )}
+            )
+            }
+            }*/}
         </div>
     ))}
     </Grid>
     </Content>
     </Layout>
-  )
+  )}
 
 export const data = graphql`
 query DojoPage {
@@ -65,11 +74,12 @@ query DojoPage {
           primary_tag {
             document {
               ... on PrismicTag {
+                id
                 data {
                   text
                 }
               }
-            }
+            } 
           }
           image {
             localFile {
@@ -90,9 +100,7 @@ query DojoPage {
       }
     }
   }
-}
-
-  
+} 
 `
 
 export default DojoPage
