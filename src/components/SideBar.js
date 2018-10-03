@@ -5,7 +5,6 @@ import { darken, lighten } from 'polished';
 
 const Wrapper = styled.div`
     display: block;
-    background-color: #f1f3f4;
     float: left;
     width: 100%;
     height: 100%;
