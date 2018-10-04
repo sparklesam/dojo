@@ -1,13 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
 import { Layout, Article, Wrapper, Button, SectionTitle } from 'components';
 import { media } from '../utils/media';
 import Img from 'gatsby-image';
 import Grid from '../components/Grid';
 import Sidebar from '../components/Sidebar';
-import Tag from '../components/Tag';
 
 const Hero = styled.section`
   height: 30vh;
