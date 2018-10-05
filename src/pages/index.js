@@ -5,7 +5,6 @@ import { Layout, Article, Wrapper, Button, SectionTitle } from 'components';
 import { media } from '../utils/media';
 import Img from 'gatsby-image';
 import Grid from '../components/Grid';
-import Sidebar from '../components/Sidebar';
 
 const Hero = styled.section`
   height: 30vh;
@@ -78,8 +77,6 @@ const DojoPage = ({data}) => {
     <Layout>
     <Hero></Hero>
     <Content>
-    <Sidebar></Sidebar>
-     
     <Grid>
     {data.allPrismicData.edges.map(post => (
           <a target="_blank" href={post.node.data.link.url}>
