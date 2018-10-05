@@ -6,6 +6,13 @@ import { media } from '../utils/media';
 import Img from 'gatsby-image';
 import Grid from '../components/Grid';
 
+const Sidebar = styled.div`
+  display: block;
+  float: left;
+  width: 100%;
+  margin: 0px 50px;
+`
+
 const Hero = styled.section`
   height: 30vh;
 `
@@ -77,6 +84,10 @@ const DojoPage = ({data}) => {
     <Layout>
     <Hero></Hero>
     <Content>
+    <Sidebar>
+      <h1>Dojo Today</h1>
+    </Sidebar>
+
     <Grid>
     {data.allPrismicData.edges.map(post => (
           <a target="_blank" href={post.node.data.link.url}>
