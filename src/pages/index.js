@@ -99,6 +99,16 @@ const DojoPage = ({data}) => {
     </Layout>
   )}
 
+export default DojoPage
+
+DojoPage.propTypes = {
+  data: PropTypes.shape({
+    allPrismicData: PropTypes.shape({
+      edges: PropTypes.array.isRequired,
+    }),
+  }).isRequired,
+};
+
 export const data = graphql`
 query DojoPage {
   allPrismicData {
@@ -150,4 +160,3 @@ query DojoPage {
 } 
 `
 
-export default DojoPage
