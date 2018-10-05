@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { darken, lighten } from 'polished';
@@ -22,11 +22,16 @@ const Logo = styled.div`
     }
 `
 
-const Sidebar = props => (
-    <Wrapper>
-        <Logo>
-            <h3>Dojo Today</h3>
-        </Logo>
-    </Wrapper>
-)
+class Sidebar extends Component {
+    render () {
+        return (
+            <Wrapper>
+                <Logo>
+                    <h3>Dojo Today</h3>
+                </Logo>
+            </Wrapper>
+        )
+    }
+}
+    
 export default Sidebar
