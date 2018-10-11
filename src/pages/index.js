@@ -6,6 +6,8 @@ import { media } from '../utils/media';
 import Img from 'gatsby-image';
 import Grid from '../components/Grid';
 
+<script src="/path/to/isotope.pkgd.min.js"></script>
+
 const Sidebar = styled.div`
   display: block;
   float: left;
@@ -86,6 +88,9 @@ const DojoPage = ({data}) => {
     <Content>
     <Sidebar>
       <h1>Dojo Today</h1>
+      {data.allPrismicTag.edges.map(tag => (
+       <ul><li className={tag.node.uid}>{tag.node.data.text}</li></ul>
+      ))}
     </Sidebar>
 
     <Grid>
@@ -119,6 +124,17 @@ DojoPage.propTypes = {
 
 export const data = graphql`
 query DojoPage {
+  allPrismicTag{ 
+    edges {
+      node {
+        uid
+        id
+        data {
+          text
+        }
+      }
+    }
+  }
   allPrismicData {
     edges {
       node {
